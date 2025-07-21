@@ -1,0 +1,19 @@
+# Node modules
+node_modules
+**/node_modules
+
+# Build output
+web/dist
+studio/dist
+
+# Logs
+npm-debug.log*
+.yarn-debug.log*
+.yarn-error.log*
+
+# VSCode
+.vscode
+
+# Environment
+.env
+.env.*
