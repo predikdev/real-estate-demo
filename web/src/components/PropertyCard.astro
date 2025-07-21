@@ -1,0 +1,11 @@
+---
+import { urlFor } from '~/lib/imageBuilder';
+const { title, mainImage, price, teaser } = Astro.props;
+---
+
+<article>
+  <img src={urlFor(mainImage)} alt={title} loading='lazy' height='300' />
+  <h2>{title}</h2>
+  <p>{price.toLocaleString()} Kč</p>
+  <p>{teaser}</p>
+</article>
