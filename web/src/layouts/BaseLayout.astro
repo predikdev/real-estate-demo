@@ -1,14 +1,16 @@
 ---
+import Navigation from '~/components/navigation/navigation.astro';
 import '../styles/global.css';
 ---
 
 <html lang='cs'>
   <head>
     <meta charset='UTF-8' />
-    <title>Real Estate Demo</title>
+    <title>Horizon | Real Estate</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   </head>
-  <body class='bg-gray-50 text-gray-900 min-h-screen'>
+  <body class='bg-gray-50 min-h-screen'>
+    <Navigation />
     <slot />
   </body>
 </html>

@@ -1,25 +1,14 @@
 ---
-import { sanityClient } from '~/lib/sanityClient';
-
-import PropertyCard from '~/components/PropertyCard.astro';
+import IndexReact from '../reactPages/index/indexReact';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const query = `*[_type == "property"]{
-  title,
-  mainImage,
-  price,
-  teaser
-}`;
-
-const properties = await sanityClient.fetch(query);
+import Hero from '~/components/hero/hero.astro';
 ---
 
 <BaseLayout>
-  <main class='p-8 max-w-4xl mx-auto'>
-    <h1 class='text-3xl font-bold mb-4'>Real Estate Demo</h1>
-    <p class='text-gray-700'>Projekt postavený na Astro 5 a Tailwind CSS 4</p>
+  <Hero />
+  <main class='p-16 mx-auto'>
+    <div class='grid'>
+      <IndexReact client:only='react' />
+    </div>
   </main>
-  <div class='grid …'>
-    {properties.map((property: any) => <PropertyCard {...property} />)}
-  </div>
 </BaseLayout>
