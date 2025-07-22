@@ -13,6 +13,7 @@ export default {
       title: 'Název',
       type: 'string',
     },
+    {name: 'slug', title: 'Slug', type: 'slug', options: {source: 'title'}},
     {
       name: 'teaser',
       title: 'Krátký popis',
@@ -92,8 +93,8 @@ export default {
       },
     },
     {
-      name: 'image',
-      title: 'Obrázek',
+      name: 'images',
+      title: 'Obrázky',
       type: 'array',
       of: [{type: 'image', options: {hotspot: true}}],
     },
