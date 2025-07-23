@@ -1,12 +1,14 @@
 ---
+const property = Astro.props as Property;
 import type { Property } from '~/types/property';
-import { urlFor } from '../../lib/helpers/imageBuilder';
+
+import { buildImgAttrs } from '../../lib/helpers/imageAttrs';
+const { src, srcset, sizes } = buildImgAttrs(property.mainImage);
+
 import { formatPrice } from '~/lib/helpers/formatPrice';
 
 import ExpandIcon from '../../assets/expand.svg';
 import DoubleBedIcon from '../../assets/bed-double.svg';
-
-const property = Astro.props as Property;
 
 function roomsLabel(count: number) {
   if (count === 0) return 'žádné';
@@ -23,11 +25,15 @@ const priceText =
 ---
 
 <div class='flex h-full flex-col min-w-0'>
-  <div class=''>
+  <div class='w-full overflow-hidden'>
     <img
-      src={urlFor(property.mainImage)}
+      src={src}
+      srcset={srcset}
+      sizes={sizes}
+      loading='lazy'
+      decoding='async'
       alt={property.teaser}
-      class='rounded-lg'
+      class='object-cover rounded-lg'
     />
     <div class='flex justify-between items-center py-2'>
       <h1 class='font-bold text-md'>{property.title}</h1>
