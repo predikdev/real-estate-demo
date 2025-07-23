@@ -1,4 +1,9 @@
 export interface Property {
+  _id: string;
+  _type: string;
+  _createdAt: string;
+  _updatedAt: string;
+
   title: string;
   slug: string;
   teaser?: string;

@@ -1,0 +1,8 @@
+---
+import PropertyCard from './PropertyCard.astro';
+const { properties } = Astro.props;
+---
+
+<div class='grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr'>
+  {properties.map((property: any) => <PropertyCard {...property} />)}
+</div>

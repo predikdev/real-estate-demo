@@ -1,0 +1,52 @@
+---
+import type { Property } from '~/types/property';
+import { urlFor } from '../../lib/helpers/imageBuilder';
+import { formatPrice } from '~/lib/helpers/formatPrice';
+
+import ExpandIcon from '../../assets/expand.svg';
+import DoubleBedIcon from '../../assets/bed-double.svg';
+
+const property = Astro.props as Property;
+
+function roomsLabel(count: number) {
+  if (count === 0) return 'žádné';
+  if (count === 1) return 'pokoj';
+  if (count >= 2 && count <= 4) return 'pokoje';
+  if (count >= 5) return 'pokojů';
+  return `${count} pokojů`;
+}
+
+const priceText =
+  typeof property.price === 'number'
+    ? formatPrice(property.price)
+    : 'Cena na dotaz';
+---
+
+<div class='flex h-full flex-col min-w-0'>
+  <div class=''>
+    <img
+      src={urlFor(property.mainImage)}
+      alt={property.teaser}
+      class='rounded-lg'
+    />
+    <div class='flex justify-between items-center py-2'>
+      <h1 class='font-bold text-md'>{property.title}</h1>
+      <h2 class='font-bold'>
+        {priceText}
+      </h2>
+    </div>
+    <p class='py-2 text-zinc-500 text-sm m-h-[4.5rem]'>{property.teaser}</p>
+    <span class='block h-[1px] bg-zinc-500 mt-auto'></span>
+    <div class='py-2 flex justify-between text-zinc-500 text-sm'>
+      <div class='flex items-center gap-1'>
+        <DoubleBedIcon width={20} height={20} />
+        {property.rooms}
+        {roomsLabel(property.rooms ?? 0)}
+      </div>
+      <div class='flex items-center gap-1'>
+        <ExpandIcon width={20} height={20} />
+        {property.area} m<sup>2</sup>
+      </div>
+    </div>
+  </div>
+</div>

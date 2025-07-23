@@ -1,14 +1,20 @@
 ---
-import IndexReact from '../reactPages/index/indexReact';
+export const prerender = true;
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '~/components/hero/hero.astro';
+
+import { getProperties } from '../lib/data/properties';
+import PropertyList from '~/components/property/PropertyList.astro';
+
+const properties = await getProperties();
 ---
 
 <BaseLayout>
   <Hero />
   <main class='p-16 mx-auto'>
     <div class='grid'>
-      <IndexReact client:only='react' />
+      <PropertyList {properties} />
     </div>
   </main>
 </BaseLayout>
