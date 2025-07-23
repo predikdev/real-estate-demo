@@ -4,7 +4,7 @@ const { properties } = Astro.props;
 ---
 
 <div
-  class='grid gap-12 py-8 sm:gap-10 lg:gap-8 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr'
+  class='grid gap-12 py-8 sm:gap-10 md:gap-8 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr'
 >
   {properties.map((property: any) => <PropertyCard {...property} />)}
 </div>
