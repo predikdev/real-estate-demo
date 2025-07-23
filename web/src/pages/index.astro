@@ -1,18 +1,24 @@
 ---
 export const prerender = true;
 
+// Components import
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '~/components/navigation/navigation.astro';
 import Hero from '~/components/hero/hero.astro';
-
-import { getProperties } from '../lib/data/properties';
 import PropertyList from '~/components/property/PropertyList.astro';
+
+// Function to get data
+import { getProperties } from '../lib/data/properties';
 
 const properties = await getProperties();
 ---
 
 <BaseLayout>
-  <Hero />
-  <main class='p-16 mx-auto'>
+  <header class='px-4 md:px-8 max-w-7xl mx-auto'>
+    <Navigation />
+    <Hero />
+  </header>
+  <main class='px-4 md:px-8 max-w-7xl mx-auto'>
     <div class='grid'>
       <PropertyList {properties} />
     </div>

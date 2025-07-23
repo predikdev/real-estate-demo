@@ -3,6 +3,8 @@ import PropertyCard from './PropertyCard.astro';
 const { properties } = Astro.props;
 ---
 
-<div class='grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr'>
+<div
+  class='grid gap-12 py-8 sm:gap-10 lg:gap-8 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr'
+>
   {properties.map((property: any) => <PropertyCard {...property} />)}
 </div>

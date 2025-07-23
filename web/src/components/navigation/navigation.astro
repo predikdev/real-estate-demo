@@ -1,11 +1,11 @@
-<nav class='py-4' aria-label='Hlavní navigace'>
-  <div
-    class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16'
-  >
+<nav class='py-4 w-full' aria-label='Hlavní navigace'>
+  <div class='max-w-7xl mx-auto flex items-center justify-between h-16'>
     <a href='/' class='flex-shrink-0 text-2xl font-bold'>Valoria</a>
     <!-- Desktop menu -->
-    <ul class='hidden md:flex justify-center items-center space-x-8'>
-      <li class='text-zinc-700 hover:text-zinc-950 ease-in-out'>
+    <ul
+      class='hidden md:flex justify-center items-center space-x-2 md:space-x-4 lg:space-x-6 text-sm lg:text-base'
+    >
+      <li class='text-zinc-700 hover:text-zinc-950 duration-200 ease-in-out'>
         <a href='/' class='px-2 py-1'>Domů</a>
       </li>
       <li class='text-zinc-700 hover:text-zinc-950 ease-in-out'>
@@ -19,9 +19,10 @@
       </li>
     </ul>
 
-    <a href='#'>
+    <!-- CTA Button -->
+    <a href='#' class='hidden md:block'>
       <button
-        class='bg-gray-950 px-8 py-2.5 rounded-xl text-gray-50 cursor-pointer'
+        class='text-sm lg:text-base px-8 py-2.5 rounded-xl border hover:bg-gray-950 hover:text-gray-50 cursor-pointer duration-200 ease-in-out'
         >Kontaktuje agenta</button
       >
     </a>
@@ -50,7 +51,7 @@
     </button>
   </div>
 
-  <!-- Mobile menu, výchozí skryté -->
+  <!-- Mobile menu, hidden default -->
   <ul id='mobile-menu' class='md:hidden hidden bg-white border-t'>
     <li>
       <a href='/' class='block px-4 py-2 text-gray-700 hover:bg-gray-50'>Domů</a
