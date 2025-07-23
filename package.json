@@ -1,10 +1,17 @@
 {
   "name": "real-estate",
   "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web",
+    "studio"
+  ],
   "scripts": {
-    "dev:web": "cd web && npm run dev",
-    "dev:studio": "cd studio && npm run dev",
-    "build:web": "cd web && npm run build",
-    "build:studio": "cd studio && npm run build"
+    "dev:web": "npm --workspace web run dev",
+    "dev:studio": "npm --workspace studio run dev",
+    "build": "npm -ws run build",
+    "build:web": "npm --workspace web run build",
+    "build:studio": "npm --workspace studio run build",
+    "preview": "npm --workspace web run preview"
   }
 }
