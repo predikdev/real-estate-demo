@@ -5,24 +5,32 @@
     <ul
       class='hidden md:flex justify-center items-center space-x-2 md:space-x-4 lg:space-x-6 text-sm lg:text-base'
     >
-      <li class='text-zinc-700 hover:text-zinc-950 duration-200 ease-in-out'>
+      <li
+        class='text-[var(--light-gray)] hover:text-[var(--black)] duration-200 ease-in-out'
+      >
         <a href='/' class='px-2 py-1'>Domů</a>
       </li>
-      <li class='text-zinc-700 hover:text-zinc-950 ease-in-out'>
+      <li
+        class='text-[var(--light-gray)] hover:text-[var(--black)] ease-in-out'
+      >
         <a href='/nemovitosti' class='px-2 py-1'>Nemovitosti</a>
       </li>
-      <li class='text-zinc-700 hover:text-zinc-950 ease-in-out'>
-        <a href='/about' class='px-2 py-1'>O nás</a>
+      <li
+        class='text-[var(--light-gray)] hover:text-[var(--black)] ease-in-out'
+      >
+        <a href='/o-nas' class='px-2 py-1'>O nás</a>
       </li>
-      <li class='text-zinc-700 hover:text-zinc-950 ease-in-out'>
-        <a href='/contact' class='px-2 py-1'>Kontakt</a>
+      <li
+        class='text-[var(--light-gray)] hover:text-[var(--black)] ease-in-out'
+      >
+        <a href='/kontakt' class='px-2 py-1'>Kontakt</a>
       </li>
     </ul>
 
     <!-- CTA Button -->
     <a href='#' class='hidden md:block w-[220px]'>
       <button
-        class='text-sm lg:text-base px-8 py-2.5 rounded-xl border hover:bg-gray-950 hover:text-gray-50 cursor-pointer duration-200 ease-in-out'
+        class='text-sm lg:text-base px-8 py-2.5 rounded-xl border border-[var(--black)] hover:bg-[var(--black)] hover:text-[var(--white)] cursor-pointer duration-200 ease-in-out'
         >Kontaktuje agenta</button
       >
     </a>
@@ -59,19 +67,32 @@
     </li>
     <li>
       <a
-        href='/properties'
+        href='/nemovitosti'
         class='block px-4 py-2 text-gray-700 hover:bg-gray-50'>Nemovitosti</a
       >
     </li>
     <li>
-      <a href='/about' class='block px-4 py-2 text-gray-700 hover:bg-gray-50'
+      <a href='/o-nas' class='block px-4 py-2 text-gray-700 hover:bg-gray-50'
         >O nás</a
       >
     </li>
     <li>
-      <a href='/contact' class='block px-4 py-2 text-gray-700 hover:bg-gray-50'
+      <a href='/kontakt' class='block px-4 py-2 text-gray-700 hover:bg-gray-50'
         >Kontakt</a
       >
     </li>
   </ul>
 </nav>
+
+<script is:inline>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
