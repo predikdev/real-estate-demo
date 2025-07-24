@@ -1,0 +1,86 @@
+---
+const property = Astro.props;
+
+import House from '../../assets/house.svg';
+---
+
+<div class='flex flex-col gap-8 py-8'>
+  <h2 class='text-2xl font-semibold'>Vlastnosti</h2>
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+
+  <div class='flex gap-4 items-center'>
+    <House
+      width={50}
+      height={50}
+      stroke-width={'1.5'}
+      class={'text-[var(--gray)]'}
+    />
+    <div class='flex flex-col'>
+      <h3 class='text-lg font-semibold'>{property.propertyType}</h3>
+      <p class='text-[var(--gray)]'>Situováno v srdci města Plattling</p>
+    </div>
+  </div>
+</div>

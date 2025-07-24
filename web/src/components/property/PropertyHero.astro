@@ -1,0 +1,11 @@
+---
+const property = Astro.props;
+import MapIcon from '../../assets/map-pin.svg';
+---
+
+<h1 class='text-6xl font-semibold'>{property.title}</h1>
+<div class='flex gap-2 items-center text-[var(--gray)]'>
+  <MapIcon width={20} height={20} />
+  <p>{property.location}</p>
+</div>
+<p class='py-4 leading-6'>{property.description}</p>

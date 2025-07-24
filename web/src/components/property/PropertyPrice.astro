@@ -1,0 +1,25 @@
+---
+const property = Astro.props;
+
+import { formatPrice } from '~/lib/helpers/formatPrice';
+---
+
+<div class='flex gap-8 justify-between lg:flex-1/3 w-full pb-8 lg:px-16'>
+  <div class='flex flex-1/2 flex-col gap-4'>
+    <div class='flex justify-between'>
+      <h2 class='text-xl'>Cena</h2>
+      <p class='text-2xl font-semibold'>
+        {formatPrice(property.price)}
+      </p>
+    </div>
+    <a href='#'>
+      <button
+        class='w-full text-sm lg:text-base px-8 py-2.5 rounded-xl bg-[var(--black)] hover:bg-black text-gray-50 cursor-pointer duration-200 ease-in-out'
+        >Domluvit schůzku</button
+      >
+    </a>
+  </div>
+  <div class='flex-1/2 my-8'>
+    <h3 class='text-lg font-semibold'>Prodávající makléř</h3>
+  </div>
+</div>

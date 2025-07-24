@@ -16,7 +16,7 @@ export interface Property {
   condition?: Condition;
   energyLabel?: EnergyLabel;
   mainImage?: PropertyImageRef;
-  image?: PropertyImage[];
+  images?: PropertyImage[];
 }
 
 export type PropertyImageRef = {
