@@ -6,9 +6,9 @@ import PropertyInfo from '~/components/property/PropertyInfo.astro';
 
 import { getProperties } from '../../lib/data/properties';
 import type { Property } from '~/types/property';
-import PropertyPrice from '~/components/property/PropertyPrice.astro';
+
 import PropertyDetails from '~/components/property/PropertyDetails.astro';
-import PropertyFeatures from '~/components/property/PropertyFeatures.astro';
+import PropertyAdditionalInfo from '~/components/property/PropertyAdditionalInfo.astro';
 import PropertyHero from '~/components/property/PropertyHero.astro';
 
 // Type-safe props
@@ -37,12 +37,11 @@ export async function getStaticPaths() {
   </header>
   <main class='px-4 md:px-8 max-w-7xl mx-auto'>
     <Gallery {...property} />
-    <div class='flex flex-col lg:flex-row gap-4 py-8'>
+    <div class='flex flex-col gap-4 py-8'>
       <PropertyHero {...property} />
       <PropertyInfo {...property} />
       <PropertyDetails {...property} />
-      <PropertyPrice {...property} />
+      <PropertyAdditionalInfo {...property} />
     </div>
-    <PropertyFeatures {...property} />
   </main>
 </BaseLayout>

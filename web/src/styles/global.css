@@ -30,6 +30,11 @@ body {
   background-color: var(--white);
 }
 
+p,
+span {
+  line-height: 32px;
+}
+
 @layer utilities {
   .line-clamp-h1 {
     font-size: clamp(3.125rem, 3.464vw + 2.229rem, 5rem);

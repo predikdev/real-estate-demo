@@ -3,15 +3,13 @@ const property = Astro.props;
 
 import Breadcrumbs from '../../components/utilities/breadcrumbs.astro';
 
-import type {ImageAttr} from '../../lib/helpers/imageAttrs'; 
+import type { ImageAttr } from '../../lib/helpers/imageAttrs';
 
 import { buildImgAttrsForGallery } from '../../lib/helpers/imageAttrs';
 const shownImages = property.images?.slice(0, 4) || [];
 const imageAttrs = shownImages.map((image: any) =>
   buildImgAttrsForGallery(image)
 );
-
-
 ---
 
 <head>
@@ -20,39 +18,35 @@ const imageAttrs = shownImages.map((image: any) =>
     rel='stylesheet'
   />
 </head>
-<div class="flex flex-col gap-4 my-8 ">
+<div class='flex flex-col gap-4 my-8'>
   <Breadcrumbs {...property} />
-  <div class='w-full max-h-[512px] grid gap-2 grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-2'>
-      {
-        imageAttrs?.map((attrs: ImageAttr, idx: number) => (
-          <a
-            href={attrs.full}
-            data-lightbox='property-gallery'
-            class=`{
-              ${idx === 0 ? 'col-span-3 row-span-2' : ''}
-              ${idx === 1 ? 'col-span-1 row-span-1' : ''}
-              ${idx === 2 ? 'col-span-1 row-span-1' : ''}
-              ${idx === 3 ? 'col-span-1 row-span-1' : ''}
-
-              md:${idx === 0 ? 'col-span-2 row-span-2' : ''}
-              md:${idx === 1 ? 'col-span-2 row-span-1' : ''}
-              md:${idx === 2 ? 'col-span-1 row-span-1' : ''}
-              md:${idx === 3 ? 'col-span-1 row-span-1' : ''}
-            }`
-          >
-            <img
-              src={attrs.src}
-              srcset={attrs.srcset}
-              sizes={attrs.sizes}
-              class='rounded-xl hover:opacity-80 transition object-cover w-full h-full'
-              loading='lazy'
-            />
-          </a>
-        ))
-      }
+  <div
+    class='w-full max-h-[512px] grid gap-4 grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-2'
+  >
+    {
+      imageAttrs?.map((attrs: ImageAttr, idx: number) => (
+        <a
+          href={attrs.full}
+          data-lightbox='property-gallery'
+          class={`
+              ${idx === 0 ? 'col-span-3 row-span-2 md:col-span-2 md:row-span-2' : ''}
+              ${idx === 1 ? 'col-span-1 row-span-1 md:col-span-2 md:row-span-1' : ''}
+              ${idx === 2 ? 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' : ''}
+              ${idx === 3 ? 'col-span-1 row-span-1 md:col-span-1 md:row-span-1' : ''}
+            `}
+        >
+          <img
+            src={attrs.src}
+            srcset={attrs.srcset}
+            sizes={attrs.sizes}
+            class='rounded-xl hover:opacity-80 transition object-cover w-full h-full'
+            loading='lazy'
+          />
+        </a>
+      ))
+    }
   </div>
 </div>
 <script
-    src='https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox-plus-jquery.min.js'
-    defer>
-</script>
+  src='https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox-plus-jquery.min.js'
+  defer></script>

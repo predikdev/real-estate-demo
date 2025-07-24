@@ -1,11 +1,22 @@
 ---
 const property = Astro.props;
 import MapIcon from '../../assets/map-pin.svg';
+
+import PropertyPrice from '~/components/property/PropertyPrice.astro';
 ---
 
-<h1 class='text-6xl font-semibold'>{property.title}</h1>
-<div class='flex gap-2 items-center text-[var(--gray)]'>
-  <MapIcon width={20} height={20} />
-  <p>{property.location}</p>
+<div
+  class='flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-32 justify-between'
+>
+  <div class='flex-1/2'>
+    <h1 class='text-6xl font-semibold'>{property.title}</h1>
+    <div class='flex gap-2 items-center text-[var(--gray)]'>
+      <MapIcon width={20} height={20} />
+      <p>{property.location}</p>
+    </div>
+  </div>
+  <PropertyPrice {...property} />
 </div>
-<p class='py-4 leading-6'>{property.description}</p>
+<div class='pb-4'>
+  <p>{property.description}</p>
+</div>
