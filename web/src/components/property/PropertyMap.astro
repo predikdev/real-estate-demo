@@ -1,0 +1,22 @@
+---
+const testObject = {
+  street: 'Ammererstraße 16',
+  city: 'Plattling',
+  zip: '94447',
+};
+
+const address = `${testObject.street}, ${testObject.city}, ${testObject.zip}`;
+---
+
+<section class='my-8'>
+  <h2 class='text-xl font-semibold mb-2'>Poloha nemovitosti</h2>
+  <iframe
+    class='min-h-[300px] lg:h-[600px]'
+    width='100%'
+    style='border:0; border-radius: 0.5rem;'
+    loading='lazy'
+    allowfullscreen
+    referrerpolicy='no-referrer-when-downgrade'
+    src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+  ></iframe>
+</section>
