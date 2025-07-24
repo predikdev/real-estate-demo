@@ -41,9 +41,11 @@ const priceText =
         {priceText}
       </h2>
     </div>
-    <p class='py-2 text-zinc-500 text-sm m-h-[4.5rem]'>{property.teaser}</p>
-    <span class='block h-[1px] bg-zinc-500 mt-auto'></span>
-    <div class='py-2 flex justify-between text-zinc-500 text-sm'>
+    <p class='py-2 text-[var(--gray)] text-sm m-h-[4.5rem]'>
+      {property.teaser}
+    </p>
+    <span class='block h-[1px] bg-[var(--gray)] mt-auto'></span>
+    <div class='py-2 flex justify-between text-[var(--gray)] text-sm'>
       <div class='flex items-center gap-1'>
         <DoubleBedIcon width={20} height={20} />
         {property.rooms}
