@@ -3,7 +3,6 @@ export interface Property {
   _type: string;
   _createdAt: string;
   _updatedAt: string;
-
   mainImage?: PropertyImageRef;
   title: string;
   slug: string;
@@ -32,6 +31,10 @@ export interface Property {
   location?: string;
   energyLabel?: EnergyLabelType;
   images?: PropertyImage[];
+  street?: string;
+  streetNumber?: number;
+  city?: string;
+  zip?: number;
 }
 
 export type PropertyImageRef = {
