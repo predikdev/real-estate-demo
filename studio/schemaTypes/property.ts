@@ -2,6 +2,10 @@ export default {
   name: 'property',
   title: 'Nemovitost',
   type: 'document',
+  fieldsets: [
+    {name: 'informations', title: 'Informace o nemovitosti'},
+    {name: 'details', title: 'Detaily o nemovitosti'},
+  ],
   fields: [
     {
       name: 'mainImage',
@@ -26,6 +30,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'additionalDescription',
+      title: 'Doplňující informace',
+      type: 'text',
+    },
+    {
       name: 'price',
       title: 'Cena (Kč)',
       type: 'number',
@@ -35,46 +44,181 @@ export default {
       title: 'Sleva',
       type: 'boolean',
     },
+    // ---------------
     {
       name: 'propertyType',
       title: 'Typ nemovitosti',
       type: 'string',
+      fieldset: 'informations',
       options: {
         list: [
-          {title: 'Dům', value: 'house'},
-          {title: 'Byt', value: 'apartment'},
-          {title: 'Pozemek', value: 'land'},
-          {title: 'Komerční', value: 'commercial'},
-          {title: 'Vila', value: 'villa'},
+          {title: 'Dům', value: 'Dům'},
+          {title: 'Byt', value: 'Byt'},
+          {title: 'Vila', value: 'Vila'},
+          {title: 'Pozemek', value: 'Pozemek'},
+          {title: 'Komerční', value: 'Komerční'},
         ],
       },
     },
     {
-      name: 'area',
-      title: 'Plocha (m²)',
+      name: 'offerType',
+      title: 'Typ nabídky',
+      type: 'string',
+      fieldset: 'informations',
+      options: {
+        list: [
+          {title: 'Prodej', value: 'Prodej'},
+          {title: 'Pronájem', value: 'Pronájem'},
+        ],
+      },
+    },
+    {
+      name: 'availability',
+      title: 'Dostupnost',
+      type: 'string',
+      fieldset: 'informations',
+      options: {
+        list: [
+          {title: 'Ihned', value: 'Ihned'},
+          {title: 'Na dotaz', value: 'Na dotaz'},
+          {title: 'Dohodou', value: 'Dohodou'},
+          {title: 'Rezervováno', value: 'Rezervováno'},
+        ],
+      },
+    },
+    {
+      name: 'disposition',
+      title: 'Dispozice',
+      type: 'string',
+      fieldset: 'informations',
+    },
+    {
+      name: 'construction',
+      title: 'Konstrukce budovy',
+      type: 'string',
+      fieldset: 'informations',
+      options: {
+        list: [
+          {title: 'Cihla', value: 'Cihla'},
+          {title: 'Kámen', value: 'Kámen'},
+          {title: 'Panel', value: 'Panel'},
+        ],
+      },
+    },
+    {
+      name: 'constructionYear',
+      title: 'Rok výstavby',
       type: 'number',
+      fieldset: 'informations',
+    },
+    {
+      name: 'reconstructionYear',
+      title: 'Rok rekonstrukce',
+      type: 'number',
+      fieldset: 'informations',
+    },
+    {
+      name: 'livingArea',
+      title: 'Užitná plocha (m²)',
+      type: 'number',
+      fieldset: 'details',
     },
     {
       name: 'rooms',
       title: 'Počet místností',
       type: 'number',
+      fieldset: 'details',
     },
     {
-      name: 'location',
-      title: 'Lokalita/Adresa',
+      name: 'floor',
+      title: 'Podlaží',
+      type: 'number',
+      fieldset: 'details',
+    },
+    {
+      name: 'elevator',
+      title: 'Výtah',
+      type: 'boolean',
+      fieldset: 'details',
+    },
+    {
+      name: 'heating',
+      title: 'Vytýpění',
       type: 'string',
+      fieldset: 'details',
+      options: {
+        list: [
+          {title: 'Ústřední topení', value: 'Ústřední topení'},
+          {title: 'Plynový kotel', value: 'Plynový kotel'},
+          {title: 'Elektrické vytápění', value: 'Elektrické vytápění'},
+          {title: 'Tepelné čerpadlo', value: 'Tepelné čerpadlo'},
+          {title: 'Podlahové vytápění', value: 'Podlahové vytápění'},
+          {title: 'Krb / Kamna', value: 'Krb / Kamna'},
+          {title: 'Solární vytápění', value: 'Solární vytápění'},
+          {title: 'Jiné', value: 'Jiné'},
+        ],
+      },
+    },
+    {
+      name: 'equipment',
+      title: 'Vybavení',
+      type: 'string',
+      fieldset: 'details',
+      options: {
+        list: [
+          {title: 'Bez vybavení', value: 'Bez vybavení'},
+          {title: 'Částečne vybaveno', value: 'Částečne vybaveno'},
+          {title: 'Plně vybaveno', value: 'Plně vybaveno'},
+        ],
+      },
+    },
+    {
+      name: 'balcony',
+      title: 'Balkon / Terasa',
+      type: 'boolean',
+      fieldset: 'details',
+    },
+    {
+      name: 'cellar',
+      title: 'Sklep',
+      type: 'boolean',
+      fieldset: 'details',
+    },
+    {
+      name: 'parking',
+      title: 'Garáž / Parkování',
+      type: 'string',
+      fieldset: 'details',
+      options: {
+        list: [
+          {title: 'Bez parkování', value: 'Bez parkování'},
+          {title: 'Parkování na ulici', value: 'Parkování na ulici'},
+          {title: 'Vyhrazené venkovní stání', value: 'Venkovní stání'},
+          {title: 'Kryté stání', value: 'Kryté stání'},
+          {title: 'Garážové stání', value: 'Garážové stání'},
+          {title: 'Soukromá garáž', value: 'Soukromá garáž'},
+          {title: 'Možnost dokoupit', value: 'Možnost dokoupit'},
+        ],
+      },
     },
     {
       name: 'condition',
       title: 'Stav nemovitosti',
       type: 'string',
+      fieldset: 'details',
       options: {
         list: [
-          {title: 'Novostavba', value: 'new'},
-          {title: 'K rekonstrukci', value: 'toRenovate'},
-          {title: 'Po rekonstrukci', value: 'renovated'},
+          {title: 'Před rekonstrukcí', value: 'Před rekonstrukcí'},
+          {title: 'Původní stav', value: 'Původní stav'},
+          {title: 'Novostavba', value: 'Novostavba'},
+          {title: 'Po rekonstrukci', value: 'Po rekonstrukci'},
         ],
       },
+    },
+    {
+      name: 'location',
+      title: 'Lokalita/Adresa',
+      type: 'string',
     },
     {
       name: 'energyLabel',

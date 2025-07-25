@@ -1,10 +1,11 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {media} from 'sanity-plugin-media'
-import {schemaTypes} from './schemaTypes'
 import {csCZLocale} from '@sanity/locale-cs-cz'
+import {schemaTypes} from './schemaTypes'
 
 import {deskStructure} from './components/deskStructure'
+import {customStylesPlugin} from './plugins'
 
 export default defineConfig({
   name: 'default',
@@ -13,7 +14,7 @@ export default defineConfig({
   projectId: 'kv2n6i6u',
   dataset: 'production',
 
-  plugins: [structureTool({structure: deskStructure}), media(), csCZLocale()],
+  plugins: [structureTool({structure: deskStructure}), media(), csCZLocale(), customStylesPlugin],
 
   schema: {
     types: schemaTypes,
