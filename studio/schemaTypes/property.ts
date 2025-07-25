@@ -5,8 +5,33 @@ export default {
   fieldsets: [
     {name: 'informations', title: 'Informace o nemovitosti'},
     {name: 'details', title: 'Detaily o nemovitosti'},
+    {name: 'address', title: 'Adresa'},
   ],
   fields: [
+    {
+      name: 'street',
+      title: 'Ulice',
+      type: 'string',
+      fieldset: 'address',
+    },
+    {
+      name: 'streetNumber',
+      title: 'Číslo popisné',
+      type: 'string',
+      fieldset: 'address',
+    },
+    {
+      name: 'city',
+      title: 'Město',
+      type: 'string',
+      fieldset: 'address',
+    },
+    {
+      name: 'zip',
+      title: 'PSČ',
+      type: 'number',
+      fieldset: 'address',
+    },
     {
       name: 'mainImage',
       title: 'Úvodní obrázek',
@@ -43,8 +68,9 @@ export default {
       name: 'isOnSale',
       title: 'Sleva',
       type: 'boolean',
+      initialValue: false,
     },
-    // ---------------
+
     {
       name: 'propertyType',
       title: 'Typ nemovitosti',
@@ -177,12 +203,14 @@ export default {
       title: 'Balkon / Terasa',
       type: 'boolean',
       fieldset: 'details',
+      initialValue: false,
     },
     {
       name: 'cellar',
       title: 'Sklep',
       type: 'boolean',
       fieldset: 'details',
+      initialValue: false,
     },
     {
       name: 'parking',
@@ -215,11 +243,7 @@ export default {
         ],
       },
     },
-    {
-      name: 'location',
-      title: 'Lokalita/Adresa',
-      type: 'string',
-    },
+
     {
       name: 'energyLabel',
       title: 'Energetický štítek',
