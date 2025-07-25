@@ -1,5 +1,6 @@
 ---
-const property = Astro.props;
+import type { Property } from '~/types/property';
+const property = Astro.props as Property;
 ---
 
 <div class='pb-8'>
@@ -8,7 +9,7 @@ const property = Astro.props;
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Užitná plocha</p>
-        <p>85 m²</p>
+        <p>{property.livingArea} m²</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Počet pokojů</p>
@@ -18,41 +19,41 @@ const property = Astro.props;
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Podlaží</p>
-        <p>2. patro ze 4</p>
+        <p>{property.floor}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Výtah</p>
-        <p>Ano</p>
+        <p>{property.elevator ? 'Ano' : 'Ne'}</p>
       </div>
     </div>
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Vytápění</p>
-        <p>Podlahové topení</p>
+        <p>{property.heating}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Vybavení</p>
-        <p>Částečně vybaveno</p>
+        <p>{property.equipment}</p>
       </div>
     </div>
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Balkon / Terasa</p>
-        <p>Ano</p>
+        <p>{property.balcony ? 'Ano' : 'Ne'}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Sklep</p>
-        <p>Ano</p>
+        <p>{property.cellar ? 'Ano' : 'Ne'}</p>
       </div>
     </div>
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Garáž / Parkování</p>
-        <p>Garážové stání</p>
+        <p>{property.parking}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Stav nemovitosti</p>
-        <p>Po rekonstrukci</p>
+        <p>{property.condition}</p>
       </div>
     </div>
   </div>

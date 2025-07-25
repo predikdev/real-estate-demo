@@ -1,11 +1,10 @@
 ---
-const testObject = {
-  street: 'Ammererstraße 16',
-  city: 'Plattling',
-  zip: '94447',
-};
+import type { Property } from '~/types/property';
+const property = Astro.props as Property;
 
-const address = `${testObject.street}, ${testObject.city}, ${testObject.zip}`;
+const address = `${property.street} ${property.streetNumber}, ${property.city}, ${property.zip}`;
+
+console.log(address);
 ---
 
 <section class='my-8'>

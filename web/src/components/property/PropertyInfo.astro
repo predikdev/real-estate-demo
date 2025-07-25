@@ -1,5 +1,6 @@
 ---
-const property = Astro.props;
+import type { Property } from '~/types/property';
+const property = Astro.props as Property;
 ---
 
 <div class='pb-8'>
@@ -8,31 +9,31 @@ const property = Astro.props;
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Typ nemovitosti</p>
-        <p>Byt</p>
+        <p>{property.propertyType}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Typ nabídky</p>
-        <p>Prodej</p>
+        <p>{property.offerType}</p>
       </div>
     </div>
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Dostupnost</p>
-        <p>Na dotaz</p>
+        <p>{property.availability}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Dispozice</p>
-        <p>3+kk, mezonet</p>
+        <p>{property.disposition}</p>
       </div>
     </div>
     <div class='flex flex-wrap gap-4 md:gap-8 lg:gap-32'>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Konstrukce budovy</p>
-        <p>Cihla / Panel</p>
+        <p>{property.construction}</p>
       </div>
       <div class='flex md:flex-2 justify-between w-full py-2'>
         <p>Rok výstavby / Rok rekonstrukce</p>
-        <p>2010 / 2021</p>
+        <p>{property.constructionYear} / {property.reconstructionYear}</p>
       </div>
     </div>
   </div>
